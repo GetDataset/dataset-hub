@@ -1,4 +1,4 @@
-# DatasetHub: A Unified API for Exploring Any Machine Learning Task
+# DatasetHub: A Unified API for Exploring Any ML Task
 
 
 **DatasetHub** is an educational project that provides a simple `get_data()` API to access datasets for a wide range of ML tasks. It helps beginners learn machine learning quickly while enabling experienced practitioners to explore specialized domains with ease.
