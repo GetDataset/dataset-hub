@@ -3,15 +3,15 @@ from dataset_hub._core.registry.load import load_config
 from dataset_hub._core.registry.transform import transform_config
 from dataset_hub._core.sources.transform import transform_raw
 from dataset_hub._core.sources.download import download_raw
-from dataset_hub._core.tables.load import load_table
-from dataset_hub._core.tables.transform import transform_table
+from dataset_hub._core.tables.load import load_tables
+from dataset_hub._core.tables.transform import transform_tables
 from dataset_hub._core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 def get_data(dataset_name: str, task_type: str) -> Dict[str, Any]:
     """
-    Публичный API: возвращает словарь {table_name: DataFrame}.
+    Core for main public API function
     
     Параметры:
         dataset_name: str — название датасета
@@ -40,9 +40,7 @@ def get_source(config: Dict[str, Any]):
 
 def get_tables(config: Dict[str, Any]) -> Dict[str, Any]:
     tables = {}
-    for table_config in config['tables']:
-        table = load_table(table_config["file"], table_config["read_params"])
-        table = transform_table(table)
-        tables[table_config["name"]] = table
+    tables = load_tables(config)
+    tables = transform_tables(tables)
 
     return tables
