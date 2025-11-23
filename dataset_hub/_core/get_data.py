@@ -9,7 +9,7 @@ from dataset_hub._core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
-def get_data(dataset_name: str = 'titanic', task_type: str = 'classification') -> Dict[str, Any]:
+def get_data(dataset_name: str, task_type: str) -> Dict[str, Any]:
     """
     Публичный API: возвращает словарь {table_name: DataFrame}.
     
