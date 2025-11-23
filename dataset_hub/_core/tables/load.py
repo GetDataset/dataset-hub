@@ -1,8 +1,11 @@
 import pandas as pd
 from typing import Dict, Any
+from pathlib import Path
 from dataset_hub._core.utils.paths import build_datafile_path
+from dataset_hub._core.registry.config import Config
+from dataset_hub._core.tables.dataset import Dataset
 
-def load_tables(config: Dict[str, Any]) -> Dict[str, Any]:
+def load_tables(config: Config) -> Dataset:
     tables = {}
     for table_config in config['tables']:
         table_path = build_datafile_path(
@@ -14,6 +17,5 @@ def load_tables(config: Dict[str, Any]) -> Dict[str, Any]:
         
     return tables
 
-def load_table(file_path, read_params=None):
-    read_params = read_params or {}
+def load_table(file_path: Path, read_params: Dict[str, Any]) -> Any:
     return pd.read_csv(file_path, **read_params)

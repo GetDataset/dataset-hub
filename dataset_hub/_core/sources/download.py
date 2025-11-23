@@ -1,10 +1,11 @@
-from typing import Dict, Any
 from pathlib import Path
 from dataset_hub._core.sources.download_utils import url2file
 from dataset_hub._core.utils.paths import build_datafile_path
+from dataset_hub._core.registry.config import Config
+
 
 # --- main download interface ---
-def download_raw(config: Dict[str, Any]) -> None:
+def download_raw(config: Config) -> None:
     """
     Load files from sources using registry
     """
@@ -25,7 +26,7 @@ def download_raw(config: Dict[str, Any]) -> None:
         download_source(source_config, source_path)
 
 # --- "url" source type ---
-def download_url(source_config: Dict[str, Any], save_path: Path) -> None:
+def download_url(source_config: Config, save_path: Path) -> None:
     """
     Load source using HTTP/HTTPS URL.
     """

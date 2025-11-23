@@ -1,5 +1,7 @@
 from typing import Dict, Any
-def transform_tables(tables: Dict[str, Any]) -> Dict[str, Any]:
+from dataset_hub._core.tables.dataset import Dataset
+
+def transform_tables(tables: Dataset) -> Dataset:
     for table_name, table in tables.items():
         tables[table_name] = transform_table(table)
     return tables

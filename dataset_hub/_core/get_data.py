@@ -35,11 +35,9 @@ def get_config(dataset_name: str, task_type: str) -> Config:
     
     return config
 
-def get_source(config: Config):
+def get_source(config: Config) -> None:
     download_raw(config)
-    
-    for transform_config in config["source_transform"]:
-        transform_raw(transform_config)
+    transform_raw(config)
 
 def get_tables(config: Config) -> Dataset:
     tables = {}

@@ -1,9 +1,10 @@
 from dataset_hub._core.get_data import get_data as _get_data
 from dataset_hub._core.utils.paths import list_available_datasets
+from dataset_hub._core.tables.dataset import Dataset
 
 task_type="classification"
 
-def get_data(dataset_name: str = 'titanic', **params):
+def get_data(dataset_name: str = 'titanic', **params) -> Dataset:
     allowed = list_available_datasets(task_type=task_type)
 
     if dataset_name not in allowed:

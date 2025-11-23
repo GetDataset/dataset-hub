@@ -1,11 +1,11 @@
 import yaml
-from typing import Dict, Any
 from pathlib import Path
 from dataset_hub._core.utils.logger import get_logger
+from dataset_hub._core.registry.config import Config
 
 logger = get_logger(__name__)
 
-def load_config(dataset_name: str, task_type: str) -> Dict[str, Any]:
+def load_config(dataset_name: str, task_type: str) -> Config:
     """
     Загружает конфиг датасета по имени.
     
@@ -27,7 +27,7 @@ def build_config_path(dataset_name: str, task_type: str) -> Path:
     config_path = dataset_hub_path / task_type / "_configs" / f"{dataset_name}.yaml"
     return config_path
 
-def load_raw_config(config_path: Path) -> Dict[str, Any]:
+def load_raw_config(config_path: Path) -> Config:
     if not config_path.exists():
         raise FileNotFoundError(f"Dataset config not found: {config_path.parts[-3:]}")
 
@@ -36,7 +36,7 @@ def load_raw_config(config_path: Path) -> Dict[str, Any]:
 
     return dataset_cfg
 
-def normalize_config(config: Dict[str, Any]) -> Dict[str, Any]:
+def normalize_config(config: Config) -> Config:
     if config.get("source_transform", None) is None: 
         config["source_transform"] = []
     for table in config["tables"]:
