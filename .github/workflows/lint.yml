@@ -1,4 +1,4 @@
-name: Lint on Push
+name: Code quality on push
 
 on:
   push:
@@ -25,10 +25,10 @@ jobs:
           pip install black isort ruff mypy
 
       - name: Run Black (format check)
-        run: black --check . || echo "⚠️ Black would reformat some files"
+        run: black --check .
 
       - name: Run Ruff (linting & style)
-        run: ruff check . || echo "⚠️ Ruff found linting issues"
+        run: ruff check .
 
       - name: Run Mypy (type checking)
-        run: mypy . || echo "⚠️ Mypy found type issues"
+        run: mypy .
