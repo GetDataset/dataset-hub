@@ -21,15 +21,16 @@ def get_data(dataset_name: str = 'titanic', task_type: str = 'classification') -
         dict {table_name: pd.DataFrame}
     """
     config = get_config(dataset_name, task_type)
-
     get_source(config)
-
-    tables = {}
-    for table_config in config['tables']:
-        tables[table_config["name"]] = get_table(table_config)
+    tables = get_tables(config)
 
     return tables
 
+def get_config(dataset_name: str, task_type: str) -> Dict[str, Any]:
+    config = load_config(dataset_name, task_type)
+    config = transform_config(config)
+    
+    return config
 
 def get_source(config: Dict[str, Any]):
     download_raw(config)
@@ -37,15 +38,11 @@ def get_source(config: Dict[str, Any]):
     for transform_config in config["source_transform"]:
         transform_raw(transform_config)
 
+def get_tables(config: Dict[str, Any]):
+    tables = {}
+    for table_config in config['tables']:
+        table = load_table(table_config["file"], table_config["read_params"])
+        table = transform_table(table)
+        tables[table_config["name"]] = table
 
-def get_table(table_config: Dict[str, Any]):
-    table = load_table(table_config["file"], table_config["read_params"])
-    table = transform_table(table)
-
-    return table
-
-def get_config(dataset_name: str, task_type: str) -> Dict[str, Any]:
-    config = load_config(dataset_name, task_type)
-    config = transform_config(config)
-    
-    return config
+    return tables
