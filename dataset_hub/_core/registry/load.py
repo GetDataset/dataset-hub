@@ -39,4 +39,7 @@ def load_raw_config(config_path: Path) -> Dict[str, Any]:
 def normalize_config(config: Dict[str, Any]) -> Dict[str, Any]:
     if config.get("source_transform", None) is None: 
         config["source_transform"] = []
+    for table in config["tables"]:
+        if "read_params" not in table:
+            table["read_params"] = {}
     return config
