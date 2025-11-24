@@ -1,10 +1,12 @@
-import pandas as pd
-from .provider import ProviderConfig
-from typing import Dict, Any
-from dataclasses import dataclass, field, asdict
-from urllib.parse import urlparse
-from .provider import Provider  # предполагается, что Provider в том же пакете
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict
+
 from dataset_hub._core.utils.pandas import read_dataframe
+
+from .provider import (
+    Provider,  # предполагается, что Provider в том же пакете
+    ProviderConfig,
+)
 
 
 @dataclass

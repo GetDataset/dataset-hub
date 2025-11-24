@@ -1,5 +1,6 @@
+from typing import Any, Callable, Dict
+
 import pandas as pd
-from typing import Any, Dict, Callable
 
 # Registry of formats and corresponding pandas reader functions
 READERS: Dict[str, Callable] = {

@@ -1,4 +1,5 @@
-from typing import Dict, Any
+from typing import Any, Dict
+
 from dataset_hub._core.provider import ProviderFactory
 from dataset_hub._core.utils.config import ConfigFactory
 

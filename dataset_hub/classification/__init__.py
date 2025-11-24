@@ -1,6 +1,7 @@
+from typing import Any, Dict
+
 from dataset_hub._core.get_data import get_data as _get_data
 from dataset_hub._core.utils.paths import list_available_datasets
-from typing import Any, Dict
 
 task_type = "classification"
 

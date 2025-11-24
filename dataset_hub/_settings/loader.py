@@ -1,4 +1,5 @@
-from typing import Dict, Any
+from typing import Any, Dict
+
 from .default_settings import DEFAULT_SETTINGS
 from .user_settings import RUNTIME_SETTINGS
 
