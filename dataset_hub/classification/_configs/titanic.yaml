@@ -1,14 +1,7 @@
-dataset_name: titanic
-
-sources:
-  - file: titanic.csv
-    source_type: url
-    source_info:
-      url: https://calmcode.io/static/data/titanic.csv
-
-source_transform: null
-
-tables:
-  - name: data
-    file: titanic.csv
-    format: csv
+provider:
+  type: url
+  params:
+    url: https://calmcode.io/static/data/titanic.csv
+    format: csv      # или auto
+    read_kwargs:
+      sep: ","
