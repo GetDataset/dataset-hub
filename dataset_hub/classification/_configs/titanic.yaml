@@ -2,6 +2,6 @@ provider:
   type: url
   params:
     url: https://calmcode.io/static/data/titanic.csv
-    format: csv      # или auto
+    format: csv
     read_kwargs:
       sep: ","
