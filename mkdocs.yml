@@ -1,0 +1,24 @@
+site_name: DatasetHub
+theme:
+  name: readthedocs
+  highlightjs: true
+
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: false   # убираем путь к файлу
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - API:
+      - ConfigFactory: api/config_factory.md
+      - Provider: api/provider.md
+      - ProviderFactory: api/provider_factory.md
+      - get_data: api/get_data.md
+  - Datasets:
+      - Overview: datasets/README.md
