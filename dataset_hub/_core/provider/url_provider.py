@@ -30,7 +30,7 @@ class UrlProviderConfig(ProviderConfig):
 
 class UrlProvider(Provider):
     """
-    Provider that loads a dataset from a remote URL and returns it as 
+    Provider that loads a dataset from a remote URL and returns it as
     a pandas DataFrame.
 
     Regardless of the underlying file format, the output is always returned as:

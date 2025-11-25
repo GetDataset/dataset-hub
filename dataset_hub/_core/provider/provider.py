@@ -39,7 +39,7 @@ class Provider(ABC):
     """
 
     ConfigClass: Type[ProviderConfig]
-    
+
     def __init__(self, config: Dict[str, Any]) -> None:
         """
         Initialize the provider with the given raw configuration dictionary.
