@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from dataset_hub._settings.loader import load_settings
+from dataset_hub._core.settings.loader import load_settings
 
 
 def build_datafile_path(dataset_name: str, filename: str) -> Path:
