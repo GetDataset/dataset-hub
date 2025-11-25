@@ -42,7 +42,7 @@ class UrlProvider(Provider):
 
     ConfigClass = UrlProviderConfig
 
-    def load(self) -> Dict[str, pd.DataFrame]:
+    def load(self) -> pd.DataFrame:
         """
         Fetch and load the dataset specified in the configuration.
 
@@ -53,8 +53,8 @@ class UrlProvider(Provider):
         Raises:
             ValueError: If the file cannot be read or the format is unsupported.
         """
-        data = read_dataframe(
+        df = read_dataframe(
             self.config["url"], self.config["format"], self.config["read_kwargs"]
         )
 
-        return {"data": data}
+        return df

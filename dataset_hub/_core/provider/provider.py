@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
-from typing import Any, Dict, Type
+from typing import Any, Dict, Type, Union
 
 
 @dataclass
@@ -47,7 +47,7 @@ class Provider(ABC):
         The initialization pipeline consists of two stages:
             - `_normalize_config()`: Validate and normalize the raw config using
             the provider's `ConfigClass` dataclass.
-            - `_pretransform()`: Optionally apply additional processing to the
+            - `_transform_config()`: Optionally apply additional processing to the
             normalized configuration.
 
         The final result of both steps is stored in `self.config`.
@@ -68,11 +68,11 @@ class Provider(ABC):
                 f"{self.__class__.__name__} must define ConfigClass = SomeDataclass"
             )
         normalized = self._normalize_config(config)
-        transformed = self._pretransform(normalized)
+        transformed = self._transform_config(normalized)
         self.config = transformed
 
     @abstractmethod
-    def load(self) -> Dict[str, Any]:
+    def load(self) -> Union[Any, Dict[str, Any]]:
         """
         Load and return the dataset according to the provider's configuration.
 
@@ -116,7 +116,7 @@ class Provider(ABC):
 
         return asdict(inst)
 
-    def _pretransform(self, config: Dict[str, Any]) -> Dict[str, Any]:
+    def _transform_config(self, config: Dict[str, Any]) -> Dict[str, Any]:
         """
         Apply optional post-processing to the normalized configuration.
 

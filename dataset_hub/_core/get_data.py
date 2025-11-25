@@ -1,10 +1,10 @@
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from dataset_hub._core.provider import ProviderFactory
 from dataset_hub._core.utils.config import ConfigFactory
 
 
-def get_data(dataset_name: str, task_type: str) -> Dict[str, Any]:
+def get_data(dataset_name: str, task_type: str) -> Union[Any, Dict[str, Any]]:
     """
     Load a dataset and return it as a dictionary of tables (usually DataFrames).
 
