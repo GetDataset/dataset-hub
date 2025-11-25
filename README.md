@@ -1,7 +1,7 @@
 # DatasetHub: A Unified API for Exploring Any ML Task
 
 
-**DatasetHub** is an educational project that provides a simple `dataset_hub.<task>.get_data()` API to access datasets.
+**DatasetHub** is an educational project that provides a simple `.get_<dataset>()` API to access datasets.
 ```python
 import dataset_hub
 
@@ -46,7 +46,7 @@ DatasetHub was created to provide a single, unified entry point for experimentin
 
 Looking ahead, the project focuses on two major directions:
 
-1. **Assemble a large collection of open datasets** for a variety of classic ML tasks, all easily accessible through the unified `dataset_hub.<task>.get_data()` interface.
+1. **Assemble a large collection of open datasets** for a variety of classic ML tasks, all easily accessible through the unified `.get_<dataset>()` interface.
 
 2. **Provide realistic, ready-to-use synthetic datasets** that mimic real-world business scenarios, enabling experimentation for niche tasks where open data is scarce.
 

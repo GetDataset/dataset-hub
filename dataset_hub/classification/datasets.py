@@ -104,3 +104,47 @@ def get_iris(**params) -> pd.DataFrame:
     """
 
     return _get_data("iris", **params)  # type: ignore[return-value]
+
+def get_breast_cancer(**params) -> pd.DataFrame:
+    """
+    Load and return the Breast Cancer Wisconsin dataset (classification).
+
+    A classic binary classification dataset containing features computed
+    from breast tissue samples and the target indicating whether a tumor
+    is malignant or benign.
+
+    Columns:
+
+    - ``Id`` (int): unique identifier for the sample
+    - ``Cl.thickness`` (int): clump thickness
+    - ``Cell.size`` (int): uniformity of cell size
+    - ``Cell.shape`` (int): uniformity of cell shape
+    - ``Marg.adhesion`` (int): marginal adhesion
+    - ``Epith.c.size`` (int): epithelial cell size
+    - ``Bare.nuclei`` (float): bare nuclei count
+    - ``Bl.cromatin`` (int): bland chromatin
+    - ``Normal.nucleoli`` (int): normal nucleoli
+    - ``Mitoses`` (int): mitoses count
+    - ``Class`` (int): target variable, 0 for benign, 1 for malignant
+
+    Args:
+        **params: Additional parameters passed to the underlying data loader
+            (see :ref:`get_data` for details).
+
+    Returns:
+        pandas.DataFrame: The Breast Cancer dataset with all features including the target.
+
+        - The DataFrame contains the columns listed above.
+        - The target column is ``Class``.
+        - All other columns can be used as features for classification tasks.
+
+    Example::
+
+        from dataset_hub.classification import get_breast_cancer
+
+        breast_cancer = get_breast_cancer()
+        print(breast_cancer.head())
+        X = breast_cancer.drop(columns=['Class'])
+        y = breast_cancer['Class']
+    """
+    return _get_data("breast_cancer", **params)  # type: ignore[return-value]
