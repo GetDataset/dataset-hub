@@ -66,6 +66,7 @@ def get_titanic(**params) -> pd.DataFrame:
     """
     return _get_data("titanic", **params)  # type: ignore[return-value]
 
+
 def get_iris(**params) -> pd.DataFrame:
     """
     Load and return the Iris dataset (classification).
