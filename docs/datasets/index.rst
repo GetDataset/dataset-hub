@@ -1,5 +1,9 @@
+.. _Datasets:
+
+****************************************
 Datasets
-===========================
+****************************************
+
 
 This page documents the datasets available in DatasetHub
 
@@ -11,6 +15,6 @@ This page documents the datasets available in DatasetHub
 ------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    ./classification/index

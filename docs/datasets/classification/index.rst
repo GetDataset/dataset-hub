@@ -1,11 +1,14 @@
+.. _Classification:
+
 ************************
-`dataset_hub <../>`_.classification
+Classification
 ************************
 
 This page documents the datasets available in the classification task.
 
+------------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    ./titanic

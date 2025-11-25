@@ -2,10 +2,8 @@
 Developer API
 ************
 
-This is the modules reference of scikit-uplift.
-
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    ./get_data
    ./config

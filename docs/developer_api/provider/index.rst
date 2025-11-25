@@ -5,7 +5,7 @@
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    ./provider
    ./provider_factory
