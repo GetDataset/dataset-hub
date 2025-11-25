@@ -26,4 +26,42 @@ def _get_data(dataset_name: str, **params) -> Union[Any, Dict[str, Any]]:
 
 
 def get_titanic(**params) -> pd.DataFrame:
+    """
+    Load and return the Titanic dataset (classification).
+
+    A classic binary classification dataset containing information about
+    passengers aboard the Titanic, including demographic and ticket-related features
+    and survival outcome.
+
+    Major columns:
+
+    - ``survived`` (int): target variable, 1 if survived, 0 otherwise
+    - ``pclass`` (int): passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)
+    - ``sex`` (str): passenger gender
+    - ``age`` (float): passenger age in years
+    - ``sibsp`` (int): number of siblings/spouses aboard
+    - ``parch`` (int): number of parents/children aboard
+    - ``fare`` (float): ticket fare
+    - ``embarked`` (str): port of embarkation (C = Cherbourg, Q = Queenstown
+        , S = Southampton)
+
+    Args:
+        **params: Additional parameters passed to the underlying data loader.
+
+    Returns:
+        pandas.DataFrame: The Titanic dataset with all features including the target.
+
+        - The DataFrame contains the columns listed above.
+        - The target column is ``survived``.
+        - All other columns can be used as features for classification tasks.
+
+    Example::
+
+        from dataset_hub.classification import get_titanic
+
+        titanic = get_titanic()
+        print(titanic.head())
+        X = titanic.drop(columns=['survived'])
+        y = titanic['survived']
+    """
     return _get_data("titanic", **params)  # type: ignore[return-value]
