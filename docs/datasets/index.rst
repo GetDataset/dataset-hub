@@ -10,10 +10,6 @@ This page documents the datasets available in DatasetHub
 
 ------------------
 
-************************
-`dataset_hub <../>`_.datasets
-************************
-
 .. toctree::
    :maxdepth: 3
 

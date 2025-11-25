@@ -1,8 +1,3 @@
-.. meta::
-    :description lang=en:
-        scikit-uplift (sklift) api reference for modeling uplift and evaluate the causal effect of a treatment
-        in scikit-learn style in python
-
 ************
 Developer API
 ************
@@ -10,7 +5,8 @@ Developer API
 This is the modules reference of scikit-uplift.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    ./get_data
+   ./config
    ./provider/index

@@ -1,18 +1,13 @@
-Provider Module
-===============
+************************
+`dataset_hub._core <../>`_.provider
+************************
 
-Abstract Provider
------------------
 
-.. autoclass:: dataset_hub._core.provider.provider.Provider
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
-SimpleProvider and its children
--------------------------------
+.. toctree::
+   :maxdepth: 4
 
-.. autoclass:: dataset_hub._core.provider.url_provider.UrlProvider
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   ./provider
+   ./provider_factory
+   ./url_provider
+

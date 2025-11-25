@@ -1,18 +1,11 @@
-Classification Datasets
-=======================
+************************
+`dataset_hub <../>`_.classification
+************************
 
 This page documents the datasets available in the classification task.
 
 
-------------------
-
-************************
-`dataset_hub.classification.datasets <../datasets>`_
-************************
-
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    ./titanic
-   # ./iris
-   # ./wine

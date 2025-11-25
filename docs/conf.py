@@ -9,11 +9,11 @@ release = "0.1.0"
 
 
 extensions = [
-    "sphinx.ext.autodoc",  # автогенерация из docstrings
-    "sphinx.ext.napoleon",  # поддержка Google/NumPy docstrings
-    "myst_parser",  # поддержка Markdown
+    "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx.ext.mathjax",
+    "sphinx.ext.napoleon",
+    "myst_parser",
     "sphinx.ext.intersphinx",
 ]
 
@@ -31,3 +31,9 @@ html_css_files = [
 # Настройки автодокументации
 autodoc_member_order = "bysource"
 autodoc_typehints = "description"
+
+autodoc_default_options = {
+    "members": False,
+    "undoc-members": False,
+}
+autosummary_generate = False
