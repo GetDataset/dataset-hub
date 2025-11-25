@@ -11,6 +11,6 @@ This page documents the datasets available in DatasetHub
 ------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    ./classification/index
