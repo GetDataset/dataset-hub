@@ -1,5 +1,7 @@
 from typing import Any, Dict, Union
 
+import pandas as pd
+
 from dataset_hub._core.get_data import get_data
 
 task_type = "classification"
@@ -21,3 +23,7 @@ def _get_data(dataset_name: str, **params) -> Union[Any, Dict[str, Any]]:
         to the dataset.
     """
     return get_data(dataset_name, task_type=task_type, **params)
+
+
+def get_titanic(**params) -> pd.DataFrame:
+    return _get_data("titanic", **params)  # type: ignore[return-value]
