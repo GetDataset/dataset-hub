@@ -5,19 +5,18 @@
 ```python
 import dataset_hub
 
-dataset = dataset_hub.classification.get_data('titanic')
-titanic = dataset['data']
+titanic = dataset_hub.classification.get_titanic()
 print(type(titanic)) # pandas.DataFrame
 ```
 It lets beginners access datasets effortlessly, while giving practitioners a single interface to experiment with any open dataset or ML task.
 
-## Quickstart for Any Task
+## Quickstart for Any Task (NOT AVAILABLE NOW)
 ```python
 import dataset_hub
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-dataset = dataset_hub.uplift.get_data('hillstrom')
+dataset = dataset_hub.uplift.get_hillstrom()
 data = dataset["data"]
 target = dataset["target"]
 treatment = dataset["treatment"]
