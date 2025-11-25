@@ -51,3 +51,18 @@ Looking ahead, the project focuses on two major directions:
 
 2. **Provide realistic, ready-to-use synthetic datasets** that mimic real-world business scenarios, enabling experimentation for niche tasks where open data is scarce.
 
+## API Disclaimer
+
+1. **Temporary issues**  
+Our dataset functions rely on external sources. If a source and mirror sources become unavailable or temporarily fail, a function may stop working temporarily or completely.  
+If you encounter a persistent issue under such circumstances, please open an issue and provide detailed information about your attempts.
+
+2. **Dynamic API**  
+If all available sources and mirror sources for a dataset completely disappear and the dataset is no longer publicly accessible, our API may change, and the dataset may be removed. Please be prepared for this possibility.
+
+3. **Copyright concerns**  
+Similar changes may occur if a copyright holder requests the removal of access to a dataset.
+
+## For copyright holders
+
+If you believe your data should not be included or accessible via this project, please contact us directly. We will promptly review your request and take appropriate action to remove or restrict access to the dataset in question.
