@@ -1,15 +1,8 @@
-.. -*- mode: rst -*-
+[![PyPI version](https://img.shields.io/pypi/v/dataset-hub.svg)](https://pypi.org/project/dataset-hub/0.1.0/)
+[![Datasets docs](https://getdataset.github.io/dataset-hub/datasets/index.html)](https://img.shields.io/badge/docs-dataset?label=datasets)
 
-|PyPi|_ |Docs|_ 
+# DatasetHub: A Unified API for Exploring Any ML Task
 
-.. |PyPi| image:: https://img.shields.io/pypi/v/dataset-hub.svg
-.. _PyPi: https://pypi.org/project/dataset-hub/0.1.0/
-
-.. |Docs| image:: https://img.shields.io/badge/docs-dataset?label=datasets
-.. _Docs: https://getdataset.github.io/dataset-hub/index.html
-
-DatasetHub: A Unified API for Exploring Any ML Task
-===============
 
 **DatasetHub** is an educational project that provides a simple `.get_<dataset>()` API to access datasets.
 ```python
