@@ -8,14 +8,19 @@ from dataset_hub._core.settings.loader import load_settings
 
 def get_logger(name: Optional[str] = None) -> Logger:
     """
-    Get a logger instance with the specified name.
+    Get a configured logger instance for this library.
+
+    This function returns a `logging.Logger` instance with a simple console 
+    StreamHandler attached. The logger is configured to:
+        - Output messages at the INFO level.
+        - Use a clean formatter: only the message text.
+        - Prevent propagation to the root logger to avoid duplicate messages.
 
     Args:
-        name (Optional[str]): The name of the logger. If None,
-            the root logger is returned.
+        name (Optional[str]): The name of the logger. If None, the root logger is used.
 
     Returns:
-        Logger: A logging.Logger instance corresponding to the given name.
+        Logger: A `logging.Logger` instance ready to use.
     """
     logger = logging.getLogger(name)
     if not logger.hasHandlers():
@@ -29,24 +34,37 @@ def get_logger(name: Optional[str] = None) -> Logger:
     return logging.getLogger(name)
 
 
-def log_dataset_doc_from_args(
-    dataset_name_arg="dataset_name", task_type_arg="task_type", verbose_arg="verbose"
-):  # TODO Add to documentation
-    """"""  # TODO add detail doctring
+def log_dataset_doc_doc_link():  
+    """
+    Decorator used by :ref:`get_data` to log a link to the dataset documentation.
+
+    The purpose of this decorator is to keep the `get_data` function clean by
+    separating the documentation logging logic. After `get_data` executes, this
+    decorator will log a link to the dataset documentation if `verbose` is enabled
+    (either passed as an argument or taken from global settings).
+
+    Returns:
+        Callable: The same `get_data` function, with documentation logging applied.
+
+    Notes:
+        - Logging is performed via the library's internal logger.
+        - The decorator does **not** alter the return value of `get_data`.
+        - Logging occurs **after** the function has executed.
+        - If `verbose` is False, no message is logged.
+    """
 
     def decorator(func):
 
         @wraps(func)
         def wrapper(*args, **kwargs):
-            # Get arg values
-            from inspect import signature
+            from inspect import signature # get arg values
 
             sig = signature(func)
             bound = sig.bind(*args, **kwargs)
             bound.apply_defaults()
-            dataset_name = bound.arguments[dataset_name_arg]
-            task_type = bound.arguments[task_type_arg]
-            verbose = bound.arguments[verbose_arg]
+            dataset_name = bound.arguments["dataset_name"]
+            task_type = bound.arguments["task_type"]
+            verbose = bound.arguments["verbose"]
 
             result = func(*args, **kwargs)
 
@@ -55,6 +73,7 @@ def log_dataset_doc_from_args(
                 verbose = settings["verbose"]
             if verbose:
                 logger = get_logger(func.__module__)
+                print(func.__module__)
                 logger.info(
                     f"Documentation: https://getdataset.github.io/dataset-hub/datasets/{task_type}/{dataset_name}.html"
                 )

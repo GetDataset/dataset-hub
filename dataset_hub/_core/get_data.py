@@ -2,10 +2,10 @@ from typing import Any, Dict, Optional, Union
 
 from dataset_hub._core.provider import ProviderFactory
 from dataset_hub._core.utils.config import ConfigFactory
-from dataset_hub._core.utils.logger import log_dataset_doc_from_args
+from dataset_hub._core.utils.logger import log_dataset_doc_doc_link
 
 
-@log_dataset_doc_from_args()
+@log_dataset_doc_doc_link()
 def get_data(
     dataset_name: str, task_type: str, verbose: Optional[bool] = None
 ) -> Union[Any, Dict[str, Any]]:
