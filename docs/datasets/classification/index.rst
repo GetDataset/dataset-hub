@@ -1,4 +1,4 @@
-.. _Classification:
+.. _classification:
 
 ************************
 Classification

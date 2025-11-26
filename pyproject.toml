@@ -9,9 +9,9 @@ authors = [
 ]
 
 dependencies = [
-    "pandas==2.3.3",
-    "requests==2.32.5",
-    "pyyaml==6.0.3",
+    "pandas>=2.1.4",
+    "requests>=2.0.0",
+    "PyYAML>=5.0.0"
 ]
 
 [project.optional-dependencies]
@@ -62,3 +62,6 @@ disallow_incomplete_defs = false
 exclude = "docs/conf\\.py"
 
 plugins = []
+
+[tool.setuptools.package-data]
+"dataset_hub" = ["**/*.yaml"]

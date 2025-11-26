@@ -63,10 +63,8 @@ Roadmap
 
 The project is evolving. Planned features:
 
-- **Synthetic dataset generators** for real-world ML tasks (uplift, churn, fraud, pricing).
-- **Task-specific helpers** for splitting, evaluating, visualizing datasets.
-- **Better dataset metadata**, including feature types, domain hints, and exploratory examples.
-- **Colab-ready tutorials** for each ML task.
+- **Expansion of dataset collection with** additional datasets.
+- **Addition of new data providers:** `sklearn`, `sklif`, `kaggle`, local CSV/Parquet support.
 - **Configurable data sources + mirrors** (for stability and public availability).
 - **Starter pack for contributors**, covering config creation, dataset structure, validation, logging.
 
@@ -79,8 +77,6 @@ We welcome contributors of all experience levels.
 
 - GitHub: https://github.com/getdataset/dataset-hub
 - Open issues / ideas / dataset suggestions are highly appreciated.
-
-|Contribs|
 
 
 API Disclaimer
