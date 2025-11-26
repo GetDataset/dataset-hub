@@ -72,13 +72,13 @@ def log_dataset_doc_doc_link():
                 settings = load_settings()
                 verbose = settings["verbose"]
             if verbose:
-                # Build logger name to match the module where get_data is actually 
-                # called via the decorator in public dataset getters 
+                # Build logger name to match the module where get_data is actually
+                # called via the decorator in public dataset getters
                 # (e.g. dataset_hub.classification.get_iris()). This ensures logs
                 # appear in the correct namespace and are consistent with library
                 # structure.
                 logger_name = f"dataset_hub.{task_type}.datasets"
-                logger = get_logger(logger_name) 
+                logger = get_logger(logger_name)
                 logger.info(
                     f"Documentation: https://getdataset.github.io/dataset-hub/datasets/{task_type}/{dataset_name}.html"
                 )
