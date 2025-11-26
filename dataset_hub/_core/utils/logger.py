@@ -80,7 +80,7 @@ def log_dataset_doc_doc_link():
                 logger_name = f"dataset_hub.{task_type}.datasets"
                 logger = get_logger(logger_name)
                 logger.info(
-                    f'Dataset info & details: https://getdataset.github.io/dataset-hub/datasets/{task_type}/{dataset_name}.html'
+                    f"Dataset info & details: https://getdataset.github.io/dataset-hub/datasets/{task_type}/{dataset_name}.html"
                 )
 
             return result
