@@ -1,3 +1,5 @@
+.. -*- mode: rst -*-
+
 |PyPi|_ |Docs|_ 
 
 .. |PyPi| image:: https://img.shields.io/pypi/v/dataset-hub.svg
