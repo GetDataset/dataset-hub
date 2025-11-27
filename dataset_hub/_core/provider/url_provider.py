@@ -47,8 +47,7 @@ class UrlProvider(Provider):
         Fetch and load the dataset specified in the configuration.
 
         Returns:
-            Dict[str, pd.DataFrame]: A dictionary containing a single key `"data"`
-            whose value is the loaded pandas DataFrame.
+            pd.DataFrame: The loaded pandas DataFrame.
 
         Raises:
             ValueError: If the file cannot be read or the format is unsupported.

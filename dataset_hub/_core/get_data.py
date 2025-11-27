@@ -1,5 +1,6 @@
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, Optional
 
+from dataset_hub._core.dataset import Dataset
 from dataset_hub._core.provider import ProviderFactory
 from dataset_hub._core.utils.config import ConfigFactory
 from dataset_hub._core.utils.logger import log_dataset_doc_doc_link
@@ -8,7 +9,7 @@ from dataset_hub._core.utils.logger import log_dataset_doc_doc_link
 @log_dataset_doc_doc_link()
 def get_data(
     dataset_name: str, task_type: str, verbose: Optional[bool] = None
-) -> Union[Any, Dict[str, Any]]:
+) -> Dataset:
     """
     Core backend function used by all `.get_<dataset_name>()` functions to load \
         datasets.
@@ -28,12 +29,12 @@ def get_data(
             documentation link. If None, the global library setting is used.
 
     Returns:
-        Union[Any, Dict[str, Any]]: Either a single object (`Any`) or a dictionary \
-            mapping table names to objects. Most commonly, `Any` is:
+        Dataset: A consistent wrapper containing the loaded data.
 
-        - If a table: typically a `pd.DataFrame`, unless a specific reader or provider \
-            returns another type. 
-        - Could also be other ML data entities, e.g., graphs, arrays, etc.
+        Example::
+
+            dataset = get_data("titanic", "classification")
+            df = dataset["data"]  # pd.DataFrame
             
     Raises:
         FileNotFoundError: If the dataset configuration YAML file is not found.
@@ -41,6 +42,6 @@ def get_data(
     """
     config = ConfigFactory.load_config(dataset_name, task_type)
     provider = ProviderFactory.build_provider(config["provider"])
-    dataset = provider.load()
+    data = provider.load()
 
-    return dataset
+    return Dataset({"data": data})

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
-from typing import Any, Dict, Type, Union
+from typing import Any, Dict, Type
 
 
 @dataclass
@@ -72,15 +72,15 @@ class Provider(ABC):
         self.config = transformed
 
     @abstractmethod
-    def load(self) -> Union[Any, Dict[str, Any]]:
+    def load(self) -> Any:
         """
         Load and return the dataset according to the provider's configuration.
 
         This method must be implemented by all concrete providers.
 
         Returns:
-            Dict[str, Any]:
-                A dictionary containing the loaded dataset object(s).
+            Any: The loaded dataset object. Typically a pd.DataFrame for single-table
+            datasets, but can be any data type (e.g., dict, list, graph, array).
         """
         ...
 
