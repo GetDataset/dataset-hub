@@ -1,7 +1,6 @@
-from typing import Any, Dict, Union
-
 import pandas as pd
 
+from dataset_hub._core.dataset import Dataset
 from dataset_hub._core.get_data import get_data
 
 task_type = "classification"
@@ -9,7 +8,7 @@ task_type = "classification"
 # How it solve pandas?
 
 
-def _get_data(dataset_name: str, **params) -> Union[Any, Dict[str, Any]]:
+def _get_data(dataset_name: str, **params) -> Dataset:
     """
     Load a dataset for the 'classification' task.
 
@@ -21,8 +20,7 @@ def _get_data(dataset_name: str, **params) -> Union[Any, Dict[str, Any]]:
         **params: Additional parameters passed to the underlying loader (optional).
 
     Returns:
-        Dict[str, Any]: A dictionary of tables (e.g., pandas DataFrames) corresponding
-        to the dataset.
+        Dataset: A Dataset object containing loaded tables.
     """
     return get_data(dataset_name, task_type=task_type, **params)
 
@@ -66,7 +64,8 @@ def get_titanic(**params) -> pd.DataFrame:
         X = titanic.drop(columns=['survived'])
         y = titanic['survived']
     """
-    return _get_data("titanic", **params)  # type: ignore[return-value]
+    dataset = _get_data("titanic", **params)
+    return dataset["data"]
 
 
 def get_iris(**params) -> pd.DataFrame:
@@ -105,4 +104,5 @@ def get_iris(**params) -> pd.DataFrame:
         y = iris['species']
     """
 
-    return _get_data("iris", **params)  # type: ignore[return-value]
+    dataset = _get_data("iris", **params)
+    return dataset["data"]
