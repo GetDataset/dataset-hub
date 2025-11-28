@@ -4,4 +4,4 @@
 California Housing
 ****************************************
 
-.. autofunction:: dataset_hub.classification.datasets.get_housing
+.. autofunction:: dataset_hub.regression.datasets.get_housing
