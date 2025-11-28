@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "dataset_hub"
 version = "0.1.1"
@@ -68,11 +72,3 @@ plugins = []
 
 [tool.setuptools.package-data]
 "dataset_hub" = ["**/*.yaml"]
-
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-packages = ["dataset_hub"]
-include-package-data = true
