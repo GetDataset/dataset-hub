@@ -1,51 +1,40 @@
 from dataclasses import dataclass, field
-from typing import Dict, Protocol, runtime_checkable
+from typing import Dict, Generic, TypeVar
 
-
-@runtime_checkable
-class DataLike(Protocol):
-    """
-    Marker protocol for data objects.
-
-    Used to indicate that an object should be treated as "data" in
-    Dataset containers and related functions. Functionally, any object
-    can be marked as DataLike.
-    """
-
-    pass
+DataLikeT = TypeVar("DataLikeT")
+"""
+Type variable representing the data stored inside a Dataset.
+In real cases it may be e.x. pd.DataFrame, tf.Dataset, 
+networX.Graph, etc..
+"""
 
 
 @dataclass
-class Dataset:
+class Dataset(Generic[DataLikeT]):
     """
-    Immutable container for loaded dataset(s) with consistent interface.
+    Generic dataset container.
 
-    This wrapper eliminates the Union[DataLike, Dict[str, DataLike]] type instability by
-    providing a single, predictable return type from all data loading operations.
-
-    A Dataset always wraps data as a dictionary (single datasets use a default key),
-    making the API consistent and type-safe.
+    Type parameters:
+        DataT: The type of each data object stored under names.
 
     Attributes:
-        data (Dict[str, DataLike]): Dictionary mapping table names to data objects.
-            For single-table datasets, uses the default key "data".
-            For multi-table datasets, keys are defined in the config.
+        data (Dict[str, DataLikeT]): Dictionary mapping table names to data objects
 
     Example:
-        Single-table dataset (loaded internally):
-            Dataset(data={"data": pd.DataFrame(...)})
-
-        Multi-table dataset:
-            Dataset(data={"train": pd.DataFrame(...), "test": pd.DataFrame(...)})
+        Creating:
+            from dataset_hub._core.dataset import Dataset
+            import pandas as pd
+            df = pd.DataFrame({"a":[1]})
+            dataset: Dataset[pd.DataFrame] = Dataset()
+            dataset["data"] = df
 
         Access:
-            dataset.data["data"]  # Single table
-            dataset.data["train"]  # First table from multi-table
+            df = dataset.data["data"]
     """
 
-    data: Dict[str, DataLike] = field(default_factory=dict)
+    data: Dict[str, DataLikeT] = field(default_factory=dict)
 
-    def __getitem__(self, key: str) -> DataLike:
+    def __getitem__(self, key: str) -> DataLikeT:
         """
         Convenient access to individual tables within the dataset.
 
@@ -53,7 +42,7 @@ class Dataset:
             key (str): Table name (e.g., "data", "train", "test").
 
         Returns:
-            Any: The requested data object.
+            DataLike: The requested data object.
 
         Raises:
             KeyError: If the table name doesn't exist.
@@ -64,7 +53,7 @@ class Dataset:
         """
         return self.data[key]
 
-    def __setitem__(self, key: str, value: DataLike) -> None:
+    def __setitem__(self, key: str, value: DataLikeT) -> None:
         self.data[key] = value
 
     def __contains__(self, key: str) -> bool:
