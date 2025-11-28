@@ -1,6 +1,6 @@
 [project]
 name = "dataset_hub"
-version = "0.1.0"
+version = "0.1.1"
 description = "A unified API for exploring any ML task"
 readme = "README.md"
 requires-python = ">=3.10"

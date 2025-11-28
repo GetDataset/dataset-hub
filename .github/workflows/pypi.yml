@@ -1,0 +1,59 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build and test distributions
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install build deps
+        run: pip install build
+
+      - name: Build package
+        run: python -m build
+        # Артефакты будут лежать в ./dist
+
+      - name: Verify installation from built wheel
+        run: |
+          pip install --force-reinstall dist/*.whl
+          python -c "import dataset_hub; print('Import OK')"
+
+      - name: Run tests (optional)
+        run: |
+          pip install pytest
+          pytest -q
+
+      - name: Upload dist artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Download built artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.8.12
+        with:
+          repository-url: https://upload.pypi.org/legacy/
