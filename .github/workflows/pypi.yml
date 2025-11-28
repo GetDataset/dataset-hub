@@ -19,13 +19,28 @@ jobs:
           python-version: "3.10"
 
       - name: Install build and test dependencies
-        run: pip install build wheel twine pytest
+        run: |
+          pip install --upgrade pip
+          pip install setuptools==68.2.2 wheel==0.42.0 build==1.0.3 twine==5.0.0 pytest
 
       - name: Build package
         run: python -m build
 
       - name: Check distributions
         run: twine check dist/*
+
+      - name: Debug package contents
+        run: |
+          echo "=== Listing dist files ==="
+          ls -la dist/
+          echo "=== Examining wheel structure ==="
+          unzip -l dist/*.whl
+          echo "=== Checking METADATA file ==="
+          unzip -p dist/*.whl "*.dist-info/METADATA" || unzip -p dist/*.whl "*.dist-info/metadata.json"
+          echo "=== METADATA content ==="
+          unzip -p dist/*.whl "*.dist-info/METADATA" 2>/dev/null || echo "No METADATA file found"
+          echo "=== metadata.json content ==="
+          unzip -p dist/*.whl "*.dist-info/metadata.json" 2>/dev/null || echo "No metadata.json found"
 
       - name: Test wheel installation
         run: |
