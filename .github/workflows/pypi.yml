@@ -24,6 +24,9 @@ jobs:
         run: python -m build
         # Артефакты будут лежать в ./dist
 
+      - name: Remove source package directory
+        run: rm -rf dataset_hub
+
       - name: Verify installation from built wheel
         run: |
           pip install --force-reinstall dist/*.whl
@@ -52,7 +55,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-
+          path: dist
+          
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.12
         with:
