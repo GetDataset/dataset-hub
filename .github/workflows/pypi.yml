@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install build dependencies
-        run: pip install build twine pytest
+      - name: Install build and test dependencies
+        run: pip install build wheel twine pytest
 
       - name: Build package
         run: python -m build
@@ -33,7 +33,7 @@ jobs:
           cp dist/*.whl install-test/
           cd install-test
           pip install *.whl
-          python -c "import dataset_hub; print('Import OK')"
+          python -c "import dataset_hub; print('Wheel import OK')"
 
       - name: Run tests with installed package
         run: |
