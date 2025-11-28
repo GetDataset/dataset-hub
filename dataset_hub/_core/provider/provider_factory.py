@@ -1,7 +1,7 @@
 from typing import Any, Dict, Type
 
-from .provider import Provider
 from .dataframe_provider import DataFrameProvider
+from .provider import Provider
 
 
 class ProviderFactory:
@@ -12,7 +12,7 @@ class ProviderFactory:
     """
 
     # Registry mapping type string -> Provider class
-    _registry: Dict[str, Type[Provider]] = {"dataframe": DataFrameProvider}
+    _REGISTRY: Dict[str, Type[Provider]] = {"dataframe": DataFrameProvider}
 
     @classmethod
     def build_provider(cls, provider_config: Dict[str, Any]) -> Provider:
@@ -37,7 +37,7 @@ class ProviderFactory:
         if not provider_params:
             raise ValueError("Provider config must include a 'params' key")
 
-        provider_cls = cls._registry.get(provider_type)
+        provider_cls = cls._REGISTRY.get(provider_type)
         if not provider_cls:
             raise ValueError(f"No provider registered for type '{provider_type}'")
 
