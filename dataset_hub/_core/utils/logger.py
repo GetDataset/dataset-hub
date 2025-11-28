@@ -1,7 +1,7 @@
 import logging
 from functools import wraps
 from logging import Logger
-from typing import Callable, Optional
+from typing import Any, Callable, Optional
 
 from dataset_hub._core.dataset import Dataset
 from dataset_hub._core.settings.loader import load_settings
@@ -36,7 +36,7 @@ def get_logger(name: Optional[str] = None) -> Logger:
 
 
 def log_dataset_doc_doc_link() -> (
-    Callable[[Callable[..., Dataset]], Callable[..., Dataset]]
+    Callable[[Callable[..., Dataset[Any]]], Callable[..., Dataset[Any]]]
 ):
     """
     Decorator used by :ref:`get_data` to log a link to the dataset documentation.
@@ -56,10 +56,10 @@ def log_dataset_doc_doc_link() -> (
         - If `verbose` is False, no message is logged.
     """
 
-    def decorator(func: Callable[..., Dataset]) -> Callable[..., Dataset]:
+    def decorator(func: Callable[..., Dataset[Any]]) -> Callable[..., Dataset[Any]]:
 
         @wraps(func)
-        def wrapper(*args, **kwargs) -> Dataset:
+        def wrapper(*args: Any, **kwargs: Any) -> Dataset[Any]:
             from inspect import signature  # get arg values
 
             sig = signature(func)

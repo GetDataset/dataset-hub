@@ -12,10 +12,10 @@ class ProviderFactory:
     """
 
     # Registry mapping type string -> Provider class
-    _REGISTRY: Dict[str, Type[Provider]] = {"dataframe": DataFrameProvider}
+    _REGISTRY: Dict[str, Type[Provider[Any]]] = {"dataframe": DataFrameProvider}
 
     @classmethod
-    def build_provider(cls, provider_config: Dict[str, Any]) -> Provider:
+    def build_provider(cls, provider_config: Dict[str, Any]) -> Provider[Any]:
         """
         Build a Provider instance from a configuration dictionary.
 

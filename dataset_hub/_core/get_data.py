@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Any, Optional
 
 from dataset_hub._core.dataset import Dataset
 from dataset_hub._core.provider import ProviderFactory
@@ -8,8 +8,8 @@ from dataset_hub._core.utils.logger import log_dataset_doc_doc_link
 
 @log_dataset_doc_doc_link()
 def get_data(
-    dataset_name: str, task_type: str, verbose: Optional[bool] = None
-) -> Dataset:
+    dataset_name: str, task_type: str, verbose: Optional[bool]
+) -> Dataset[Any]:
     """
     Core backend function used by all `.get_<dataset_name>()` functions to load \
         datasets.

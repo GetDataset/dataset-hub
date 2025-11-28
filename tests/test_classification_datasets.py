@@ -1,3 +1,5 @@
+from typing import Callable
+
 import pandas as pd
 import pytest
 
@@ -11,7 +13,7 @@ from dataset_hub.classification import datasets
         datasets.get_iris,
     ],
 )
-def test_classification_datasets_smoke(func):
+def test_classification_datasets_smoke(func: Callable[[], pd.DataFrame]) -> None:
     df = func()
 
     assert isinstance(df, pd.DataFrame)

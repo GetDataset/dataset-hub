@@ -1,31 +1,14 @@
+from typing import Optional
+
 import pandas as pd
 
 from dataset_hub._core.dataset import Dataset
 from dataset_hub._core.get_data import get_data
 
 task_type = "classification"
-# TODO think about **params in public functions. User dont know about this params.
-# How it solve pandas?
 
 
-def _get_data(dataset_name: str, **params) -> Dataset:
-    """
-    Load a dataset for the 'classification' task.
-
-    This function provides a simple interface for users to load datasets
-    relevant to the classification task.
-
-    Args:
-        dataset_name (str): Name of the dataset to load. Defaults to "titanic".
-        **params: Additional parameters passed to the underlying loader (optional).
-
-    Returns:
-        Dataset: A Dataset object containing loaded tables.
-    """
-    return get_data(dataset_name, task_type=task_type, **params)
-
-
-def get_titanic(**params) -> pd.DataFrame:
+def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
     """
     Load and return the Titanic dataset (classification).
 
@@ -64,11 +47,13 @@ def get_titanic(**params) -> pd.DataFrame:
         X = titanic.drop(columns=['survived'])
         y = titanic['survived']
     """
-    dataset: Dataset[pd.DataFrame] = _get_data("titanic", **params)
+    dataset: Dataset[pd.DataFrame] = get_data(
+        dataset_name="titanic", task_type=task_type, verbose=verbose
+    )
     return dataset["data"]
 
 
-def get_iris(**params) -> pd.DataFrame:
+def get_iris(verbose: Optional[bool] = None) -> pd.DataFrame:
     """
     Load and return the Iris dataset (classification).
 
@@ -103,6 +88,7 @@ def get_iris(**params) -> pd.DataFrame:
         X = iris.drop(columns=['species'])
         y = iris['species']
     """
-
-    dataset: Dataset[pd.DataFrame] = _get_data("iris", **params)
+    dataset: Dataset[pd.DataFrame] = get_data(
+        dataset_name="iris", task_type=task_type, verbose=verbose
+    )
     return dataset["data"]

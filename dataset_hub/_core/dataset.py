@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Dict, Generic, TypeVar
+from typing import Dict, Generic, ItemsView, KeysView, TypeVar
 
 DataLikeT = TypeVar("DataLikeT")
 """
@@ -60,11 +60,11 @@ class Dataset(Generic[DataLikeT]):
         """Check if a table exists in the dataset."""
         return key in self.data
 
-    def keys(self):
+    def keys(self) -> KeysView[str]:
         """Get all table names in this dataset."""
         return self.data.keys()
 
-    def items(self):
+    def items(self) -> ItemsView[str, DataLikeT]:
         """Iterate over (table_name, data) pairs."""
         return self.data.items()
 
