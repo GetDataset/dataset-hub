@@ -5,9 +5,10 @@ on:
     types: [published]
 
 jobs:
-  build:
-    name: Build and test distributions
+  build_and_publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -22,41 +23,20 @@ jobs:
 
       - name: Build package
         run: python -m build
-        # Артефакты будут лежать в ./dist
 
       - name: Remove source package directory
         run: rm -rf dataset_hub
 
-      - name: Verify installation from built wheel
+      - name: Verify installation from wheel
         run: |
           pip install --force-reinstall dist/*.whl
           python -c "import dataset_hub; print('Import OK')"
 
-      - name: Run tests (optional)
+      - name: Run tests
         run: |
           pip install pytest
           pytest -q
 
-      - name: Upload dist artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/*
-
-  publish:
-    name: Publish to PyPI
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-
-    steps:
-      - name: Download built artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-          
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.12
         with:
