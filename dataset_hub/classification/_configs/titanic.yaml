@@ -1,7 +1,7 @@
 provider:
-  type: url
+  type: dataframe
   params:
-    url: https://calmcode.io/static/data/titanic.csv
+    path_or_url: https://calmcode.io/static/data/titanic.csv
     format: csv
     read_kwargs:
       sep: ","

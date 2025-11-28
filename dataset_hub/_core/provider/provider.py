@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
-from typing import Any, Dict, Type
+from typing import Any, Dict, Generic, Type
+
+from dataset_hub._core.dataset import DataLikeT
 
 
 @dataclass
@@ -17,7 +19,7 @@ class ProviderConfig:
     pass
 
 
-class Provider(ABC):
+class Provider(ABC, Generic[DataLikeT]):
     """
     Abstract base class for all data providers.
 
@@ -72,7 +74,7 @@ class Provider(ABC):
         self.config = transformed
 
     @abstractmethod
-    def load(self) -> Any:
+    def load(self) -> DataLikeT:
         """
         Load and return the dataset according to the provider's configuration.
 

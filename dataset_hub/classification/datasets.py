@@ -64,7 +64,7 @@ def get_titanic(**params) -> pd.DataFrame:
         X = titanic.drop(columns=['survived'])
         y = titanic['survived']
     """
-    dataset = _get_data("titanic", **params)
+    dataset: Dataset[pd.DataFrame] = _get_data("titanic", **params)
     return dataset["data"]
 
 
@@ -104,5 +104,5 @@ def get_iris(**params) -> pd.DataFrame:
         y = iris['species']
     """
 
-    dataset = _get_data("iris", **params)
+    dataset: Dataset[pd.DataFrame] = _get_data("iris", **params)
     return dataset["data"]
