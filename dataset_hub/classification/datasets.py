@@ -3,7 +3,7 @@ from typing import Optional
 import pandas as pd
 
 from dataset_hub._core.dataset import Dataset
-from dataset_hub._core.get_data import get_data
+from dataset_hub._core.get_data import get_data as _get_data
 
 task_type = "classification"
 
@@ -47,7 +47,7 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
         X = titanic.drop(columns=['survived'])
         y = titanic['survived']
     """
-    dataset: Dataset[pd.DataFrame] = get_data(
+    dataset: Dataset[pd.DataFrame] = _get_data(
         dataset_name="titanic", task_type=task_type, verbose=verbose
     )
     return dataset["data"]
@@ -88,7 +88,7 @@ def get_iris(verbose: Optional[bool] = None) -> pd.DataFrame:
         X = iris.drop(columns=['species'])
         y = iris['species']
     """
-    dataset: Dataset[pd.DataFrame] = get_data(
+    dataset: Dataset[pd.DataFrame] = _get_data(
         dataset_name="iris", task_type=task_type, verbose=verbose
     )
     return dataset["data"]

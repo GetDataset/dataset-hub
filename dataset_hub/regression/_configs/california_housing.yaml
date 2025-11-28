@@ -1,0 +1,7 @@
+provider:
+  type: dataframe
+  params:
+    path_or_url: https://raw.githubusercontent.com/dmarks84/Ind_Project_California-Housing-Data--Kaggle/refs/heads/main/housing.csv
+    format: csv
+    read_kwargs:
+      sep: ","
