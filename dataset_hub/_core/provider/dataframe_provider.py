@@ -12,7 +12,7 @@ from .provider import (
 
 
 @dataclass
-class UrlProviderConfig(ProviderConfig):
+class DataFrameProviderConfig(ProviderConfig):
     """
     Configuration schema for `UrlProvider`.
 
@@ -23,12 +23,12 @@ class UrlProviderConfig(ProviderConfig):
             directly to the corresponding pandas reader.
     """
 
-    url: str
+    path_or_url: str
     format: str
     read_kwargs: Dict[str, Any] = field(default_factory=dict)
 
 
-class UrlProvider(Provider[pd.DataFrame]):
+class DataFrameProvider(Provider[pd.DataFrame]):
     """
     Provider that loads a dataset from a remote URL and returns it as
     a pandas DataFrame.
@@ -40,7 +40,7 @@ class UrlProvider(Provider[pd.DataFrame]):
     Supported formats depend on the implementation of `read_dataframe`.
     """
 
-    ConfigClass = UrlProviderConfig
+    ConfigClass = DataFrameProviderConfig
 
     def load(self) -> pd.DataFrame:
         """
@@ -53,7 +53,7 @@ class UrlProvider(Provider[pd.DataFrame]):
             ValueError: If the file cannot be read or the format is unsupported.
         """
         df = read_dataframe(
-            self.config["url"], self.config["format"], self.config["read_kwargs"]
+            self.config["path_or_url"], self.config["format"], self.config["read_kwargs"]
         )
 
         return df
