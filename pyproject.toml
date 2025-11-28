@@ -68,3 +68,7 @@ plugins = []
 
 [tool.setuptools.package-data]
 "dataset_hub" = ["**/*.yaml"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
