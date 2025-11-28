@@ -56,7 +56,10 @@ jobs:
           cd test-run
           pytest ../tests -q
 
+      - name: Return to workspace root
+        run: cd $GITHUB_WORKSPACE
       - name: Publish to PyPI
+
         uses: pypa/gh-action-pypi-publish@v1.8.12
         with:
           repository-url: https://upload.pypi.org/legacy/
