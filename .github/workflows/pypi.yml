@@ -55,7 +55,10 @@ jobs:
           mkdir test-run
           cd test-run
           pytest ../tests -q
-
+      
+      - name: FINAL dist list
+        run: ls -l dist
+        
       - name: Return to workspace root
         run: cd $GITHUB_WORKSPACE
       - name: Publish to PyPI
