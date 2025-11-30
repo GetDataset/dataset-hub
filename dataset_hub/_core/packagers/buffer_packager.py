@@ -8,9 +8,6 @@ BufferPackT = TypeVar("BufferPackT")
 
 class BufferPackager(ABC, Generic[BufferPackT]):
 
-
-    def __init__(self, config: Dict[str, Any]) -> None:
-        pass
-
-    def pack(self) -> Dict[str, None]: #TODO rename this
+    @abstractmethod
+    def package(self, buffers: Dict[str, bytes]) -> BufferPackT:
         pass
