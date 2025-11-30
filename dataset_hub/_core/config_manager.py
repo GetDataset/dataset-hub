@@ -42,7 +42,7 @@ class ConfigManager:
             Path: Full path to the YAML config file.
         """
         current_file_path = Path(__file__).resolve()
-        dataset_hub_path = current_file_path.parent.parent.parent
+        dataset_hub_path = current_file_path.parent.parent
         config_path = dataset_hub_path / task_type / "_configs" / f"{dataset_name}.yaml"
         return config_path
 
