@@ -3,7 +3,7 @@ from functools import wraps
 from logging import Logger
 from typing import Any, Callable, Optional
 
-from dataset_hub._core.dataset import DataBundle
+from dataset_hub._core.data_bundle import DataBundle
 from dataset_hub._core.settings.loader import load_settings
 
 

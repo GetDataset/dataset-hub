@@ -22,7 +22,7 @@ class DataBundle(Generic[UserDataT]):
 
     Example:
         Creating:
-            from dataset_hub._core.dataset import DataBundle
+            from dataset_hub._core.data_bundle import DataBundle
             import pandas as pd
             df = pd.DataFrame({"a":[1]})
             dataset: DataBundle[pd.DataFrame] = DataBundle()

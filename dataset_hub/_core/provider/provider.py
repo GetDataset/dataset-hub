@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
 from typing import Any, Dict, Generic, Type
 
-from dataset_hub._core.dataset import UserDataT
+from dataset_hub._core.data_bundle import UserDataT
 
 
 @dataclass

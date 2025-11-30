@@ -2,7 +2,7 @@ from typing import Optional
 
 import pandas as pd
 
-from dataset_hub._core.dataset import DataBundle
+from dataset_hub._core.data_bundle import DataBundle
 from dataset_hub._core.get_data import get_data as _get_data
 
 task_type = "classification"

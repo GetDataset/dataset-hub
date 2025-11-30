@@ -1,6 +1,6 @@
 from typing import Any, Optional
 
-from dataset_hub._core.dataset import DataBundle
+from dataset_hub._core.data_bundle import DataBundle
 from dataset_hub._core.provider import ProviderFactory
 from dataset_hub._core.utils.config import ConfigManager
 from dataset_hub._core.utils.logger import log_dataset_doc_doc_link
