@@ -1,7 +1,10 @@
-provider:
-  type: dataframe
-  params:
-    path_or_url: https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv
-    format: csv
+dataset_parts:
+  - name: iris
+    pack_type: table
+    as_type: pd.DataFrame
+    source:
+      type: url
+      url: https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv
+      format: csv
     read_kwargs:
       sep: ","

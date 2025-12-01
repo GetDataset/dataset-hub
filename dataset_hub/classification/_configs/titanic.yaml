@@ -1,7 +1,10 @@
-provider:
-  type: dataframe
-  params:
-    path_or_url: https://calmcode.io/static/data/titanic.csv
-    format: csv
+dataset_parts:
+  - name: titanic
+    pack_type: table
+    as_type: pd.DataFrame
+    source:
+      type: url
+      url: https://calmcode.io/static/data/titanic.csv
+      format: csv
     read_kwargs:
       sep: ","
