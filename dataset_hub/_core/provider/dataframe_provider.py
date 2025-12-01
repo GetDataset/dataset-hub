@@ -75,7 +75,7 @@ class DataFrameProvider(Provider[pd.DataFrame]):
         """
         source = self.config["source"]
         source_type = source.get("type")
-        
+
         if source_type != "url":
             raise ValueError(f"Source type '{source_type}' is not supported yet")
 

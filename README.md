@@ -19,8 +19,8 @@ It lets beginners access datasets effortlessly, while giving practitioners a sin
 pip install dataset-hub
 ```
 
-## Available tasks and datasets:
-[dataset-hub.docs.com](https://getdataset.github.io/dataset-hub/datasets/index.html)
+## [Available datasets are here](https://getdataset.github.io/dataset-hub/datasets/index.html)
+
 
 ## Why this library exists
 DatasetHub was created to provide a single, unified entry point for experimenting with any classic ML task — from scoring and forecasting to fraud detection and uplift modeling.
