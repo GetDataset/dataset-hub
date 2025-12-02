@@ -20,7 +20,6 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
     
     Columns:
 
-    - ``survived`` (int): target variable, 1 if survived, 0 otherwise
     - ``pclass`` (int): passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)
     - ``name`` (str): full name of the passenger
     - ``sex`` (str): passenger gender
@@ -28,20 +27,16 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
     - ``fare`` (float): ticket fare, may contain missing values
     - ``sibsp`` (int): number of siblings/spouses aboard
     - ``parch`` (int): number of parents/children aboard
+    - ``survived`` 🚩 (int): **target variable**, 1 if survived, 0 otherwise
 
     Args:
         verbose (bool, optional):
-            If True, the function prints a link to the dataset documentation in the log output\
-            after loading. (e.g., on this page)
+            If True, the function prints a link to the dataset documentation in \
+            the log output after loading. (e.g., on this page)
             Default is None, which uses the global :ref:`settings`.
 
     Returns:
         pandas.DataFrame: The Titanic dataset with all features including the target.
-
-        - The DataFrame contains the columns listed above.
-        - The target column is ``survived``.
-        - All other columns can be used as features for classification tasks.
-
         
     Quick Start:
 
@@ -49,7 +44,7 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
     
         import dataset_hub
 
-        dataset = dataset_hub.classification.get_titanic()
+        titanic = dataset_hub.classification.get_titanic()
     
     Baseline:
         
@@ -61,11 +56,11 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
         from dataset_hub.classification import get_titanic
 
         # Get titanic dataset
-        dataset = get_titanic()
+        titanic = get_titanic()
 
         # Separate target variable (y) and features (X)
-        y = dataset["survived"]
-        X = dataset.drop("survived", axis=1)
+        y = titanic["survived"]
+        X = titanic.drop("survived", axis=1)
 
         # Drop categorical columns for simplicity (you can preprocess them yourself)
         X = X.select_dtypes(include=["int64", "float64"])
@@ -112,20 +107,17 @@ def get_iris(verbose: Optional[bool] = None) -> pd.DataFrame:
     - ``sepal_width`` (float): width of the sepal in cm
     - ``petal_length`` (float): length of the petal in cm
     - ``petal_width`` (float): width of the petal in cm
-    - ``species`` (str): target variable, species name (setosa, versicolor, virginica)
+    - ``species`` 🚩 (str): **target variable**, species name (setosa, \
+        versicolor, virginica)
 
     Args:
         verbose (bool, optional):
-            If True, the function prints a link to the dataset documentation in the log output\
-            after loading. (e.g., on this page)
+            If True, the function prints a link to the dataset documentation \
+                in the log output after loading. (e.g., on this page)
             Default is None, which uses the global :ref:`settings`.
 
     Returns:
         pandas.DataFrame: The Iris dataset with all features including the target.
-
-        - The DataFrame contains the columns listed above.
-        - The target column is ``species``.
-        - All other columns can be used as features for classification tasks.
 
     Quick Start:
 
