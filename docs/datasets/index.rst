@@ -19,3 +19,4 @@ This page documents the datasets available in DatasetHub
 
    ./classification/index
    ./regression/index
+   ./timeseries/index
