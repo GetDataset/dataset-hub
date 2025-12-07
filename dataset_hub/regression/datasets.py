@@ -58,7 +58,6 @@ def get_housing(verbose: Optional[bool] = None) -> pd.DataFrame:
         import dataset_hub
 
         housing = dataset_hub.regression.get_housing()
-        print(housing.head())
 
     Baseline:
 

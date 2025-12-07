@@ -126,7 +126,6 @@ def get_iris(verbose: Optional[bool] = None) -> pd.DataFrame:
         import dataset_hub
 
         iris = dataset_hub.classification.get_iris()
-        print(iris.head())
 
     Baseline:
 
