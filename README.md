@@ -3,23 +3,47 @@
 
 # DatasetHub: A Unified API for Exploring Any ML Task
 
-
-**DatasetHub** is an educational project that provides a simple `.get_<dataset>()` API to access datasets.
 ```python
 import dataset_hub
 
-titanic = dataset_hub.classification.get_titanic()
-print(type(titanic)) # pandas.DataFrame
+housing = dataset_hub.regression.get_housing() # pd.DataFrame
+# Dataset info & details: https://getdataset.github.io/dataset-hub/datasets/classification/titanic.html
 ```
-It lets beginners access datasets effortlessly, while giving practitioners a single interface to experiment with any open dataset or ML task.
 
 ## Installation
 ```bash
 # Python 3.9+
 pip install dataset-hub
 ```
+If you encounter any installation issues (OS-specific or otherwise), please check or post in the existing discussion:
+[Bug Reports, Installation Issues & Q&A](https://github.com/GetDataset/dataset-hub/discussions/64)  
 
-## [Available datasets are here](https://getdataset.github.io/dataset-hub/datasets/index.html)
+## Key Features
+
+- **Unified one-line API** — load any dataset with `.get_<dataset>()`.
+- **Wide task coverage** — classification, regression, time series, and potentially more.
+- **Rich documentation** — metadata, columns, examples, and source links.
+- **Starter baselines** — quick starter models for every dataset.
+- **Curated, not crowded** — a focused hub of easy-to-use, well-documented datasets.
+
+
+## Supported Datasets
+
+Each dataset includes a detailed documentation page with metadata, columns, sources, and a prepared baseline.
+
+### Classification
+- **Titanic**  
+  [Documentation](https://getdataset.github.io/dataset-hub/datasets/classification/titanic.html)
+- **Iris**  
+  [Documentation](https://getdataset.github.io/dataset-hub/datasets/classification/iris.html)
+
+### Regression
+- **California Housing Prices**  
+  [Documentation](https://getdataset.github.io/dataset-hub/datasets/regression/california_housing.html)
+
+### Time Series
+- **Household Electric Power Consumption**  
+  [Documentation](https://getdataset.github.io/dataset-hub/datasets/timeseries/household_power.html)
 
 
 ## Why this library exists
@@ -46,3 +70,11 @@ Similar changes may occur if a copyright holder requests the removal of access t
 ## For copyright holders
 
 If you believe your data should not be included or accessible via this project, please contact us directly. We will promptly review your request and take appropriate action to remove or restrict access to the dataset in question.
+
+## Contributing
+
+Currently there is no formal contribution guide.  
+If you'd like to contribute a new dataset, report a bug, or suggest an improvement, please start a discussion here:  
+[Bug Reports, Installation Issues & Q&A](https://github.com/GetDataset/dataset-hub/discussions/64)  
+
+We welcome community contributions and will provide guidance in the discussion thread.
