@@ -16,7 +16,7 @@ def set_option(
         value (Any): New value assigned to the option.
 
     Example:
-    
+
         .. code-block:: python
 
             import dataset_hub
