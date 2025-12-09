@@ -7,7 +7,6 @@
 import dataset_hub
 
 housing = dataset_hub.regression.get_housing() # pd.DataFrame
-# Dataset info & details: https://getdataset.github.io/dataset-hub/datasets/regression/california_housing.html
 ```
 
 ## Installation
