@@ -1,4 +1,4 @@
-[![PyPI version](https://img.shields.io/pypi/v/dataset-hub.svg)](https://pypi.org/project/dataset-hub/0.1.0/)
+[![PyPI version](https://img.shields.io/pypi/v/dataset-hub.svg)](https://pypi.org/project/dataset-hub/)
 [![Docs](https://img.shields.io/badge/docs-dataset?label=dataset-hub)](https://getdataset.github.io/dataset-hub/index.html)
 
 # DatasetHub: A Unified API for Exploring Any ML Task
