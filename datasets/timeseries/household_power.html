@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Household Electric Power Consumption &mdash; DatasetHub 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developer Guide" href="../../dev_docs/index.html" />
+    <link rel="prev" title="Timeseries" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> DatasetHub
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">DatasetHub</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Datasets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classification/index.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regression/index.html">Regression</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Timeseries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Household Electric Power Consumption</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_docs/index.html">Developer Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DatasetHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Datasets</a> &raquo;</li>
+          <li><a href="index.html">Timeseries</a> &raquo;</li>
+      <li>Household Electric Power Consumption</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/datasets/timeseries/household_power.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="household-electric-power-consumption">
+<span id="household-power"></span><h1>Household Electric Power Consumption<a class="headerlink" href="#household-electric-power-consumption" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="dataset_hub.timeseries.datasets.get_household_power">
+<span class="sig-prename descclassname"><span class="pre">dataset_hub.timeseries.datasets.</span></span><span class="sig-name descname"><span class="pre">get_household_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/dataset_hub/timeseries/datasets.html#get_household_power"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dataset_hub.timeseries.datasets.get_household_power" title="Permalink to this definition"></a></dt>
+<dd><p>Load and return the Individual Household Electric Power Consumption dataset.</p>
+<p>Measurements of <strong>electric power consumption in a single household</strong> with a one-minute         sampling rate over a period of almost 4 years (December 2006 – November 2010).         Each record contains several electrical and sub-metering measurements.</p>
+<p>This dataset is designed for minute-level analysis of total household energy         consumption, capturing overall usage patterns of a single home.</p>
+<p>Original dataset: This dataset is available on the UCI Machine Learning         Repository:
+<a class="reference external" href="https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption">Individual Household Electric Power Consumption</a></p>
+<p>Columns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Date</span></code> (str): Date of measurement in format dd/mm/yyyy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Time</span></code> (str): Time of measurement in format hh:mm:ss</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Global_active_power</span></code> (float): Household global minute-averaged active         power (kilowatt)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Global_reactive_power</span></code> (float): Household global minute-averaged reactive         power (kilowatt)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Voltage</span></code> (float): Minute-averaged voltage (volt)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sub_metering_1</span></code> (float): Energy sub-metering No. 1         (kitchen: dishwasher, oven, microwave; watt-hour of active energy)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sub_metering_2</span></code> (float): Energy sub-metering No. 2         (laundry room: washing machine, tumble-drier, refrigerator, light; watt-hour)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sub_metering_3</span></code> (float): Energy sub-metering No. 3         (electric water-heater, air-conditioner; watt-hour)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Global_intensity</span></code> 🚩 (float): Household global minute-averaged current         intensity (ampere)</p></li>
+</ul>
+<p>Notes:
+- Missing values are present in approximately 1.25% of the rows.
+- Active energy not covered by sub-meterings 1–3 can be calculated as:
+<cite>(Global_active_power*1000/60 - Sub_metering_1 - Sub_metering_2 - Sub_metering_3)</cite>         in watt-hour.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the function prints a link to the dataset documentation                 in the log output after loading. (e.g., on this page)
+Default is None, which uses the global <a class="reference internal" href="../../settings.html#settings"><span class="std std-ref">Library Settings</span></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The household power consumption dataset with all features.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p>Quick Start:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dataset_hub</span>
+
+<span class="n">household_power</span> <span class="o">=</span> <span class="n">dataset_hub</span><span class="o">.</span><span class="n">timeseries</span><span class="o">.</span><span class="n">get_household_power</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Baseline:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to install the following packages before running this baseline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>prophet
+pip<span class="w"> </span>install<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prophet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Prophet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataset_hub.timeseries</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_household_power</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">household_power</span> <span class="o">=</span> <span class="n">get_household_power</span><span class="p">()</span>
+
+<span class="c1"># Combine Date and Time into datetime</span>
+<span class="n">household_power</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">household_power</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">household_power</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">household_power</span> <span class="o">=</span> <span class="n">household_power</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Aggregate to monthly mean</span>
+<span class="n">monthly_power</span> <span class="o">=</span> <span class="n">household_power</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;ME&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Prepare data for Prophet</span>
+<span class="n">df_prophet</span> <span class="o">=</span> <span class="n">monthly_power</span><span class="p">[[</span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span> <span class="s2">&quot;Global_active_power&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;ds&quot;</span><span class="p">,</span> <span class="s2">&quot;Global_active_power&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">})</span>
+<span class="n">df_prophet</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_prophet</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+<span class="c1"># Drop incomplete last month</span>
+<span class="n">df_prophet</span> <span class="o">=</span> <span class="n">df_prophet</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Split: train on all except last full month</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">df_prophet</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">df_prophet</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># ========================</span>
+<span class="c1"># Part 1: Monthly forecast</span>
+<span class="c1"># ========================</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Prophet</span><span class="p">(</span><span class="n">daily_seasonality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">yearly_seasonality</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+
+<span class="c1"># Create future dataframe for next month</span>
+<span class="n">future</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">make_future_dataframe</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;ME&#39;</span><span class="p">)</span>
+<span class="n">forecast</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">future</span><span class="p">)</span>
+
+<span class="c1"># Plot monthly forecast</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Prophet monthly forecast of Global Active Power for next month&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot components (trend, yearly seasonality)</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># =================================</span>
+<span class="c1"># Part 2: Next month forecast error</span>
+<span class="c1"># =================================</span>
+<span class="c1"># Predicted and actual for the last month</span>
+<span class="n">pred_total</span> <span class="o">=</span> <span class="n">forecast</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;yhat&quot;</span><span class="p">]</span>
+<span class="n">actual_total</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Compute percentage error</span>
+<span class="n">mape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">actual_total</span> <span class="o">-</span> <span class="n">pred_total</span><span class="p">)</span> <span class="o">/</span> <span class="n">actual_total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Note: This is NOT a classical MAPE or robust model evaluation.</span>
+<span class="c1"># We are showing the percentage error on a single month forecast as an illustrative example only.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage error for next month forecast: </span><span class="si">{</span><span class="n">mape</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span> <span class="c1"># 7.58%</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Timeseries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../dev_docs/index.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
