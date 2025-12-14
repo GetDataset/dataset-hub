@@ -28,12 +28,15 @@ If you run into installation issues, please write [here](https://github.com/GetD
 
 Every dataset in DatasetHub comes with a **ready-to-run baseline**, so you can start experimenting immediately.  
 
-| Task         | Dataset                               | Documentation |
-|--------------|----------------------------------------|---------------|
-| Classification | Titanic                               | [Link](https://getdataset.github.io/dataset-hub/datasets/classification/titanic.html) |
-| Classification | Iris                                  | [Link](https://getdataset.github.io/dataset-hub/datasets/classification/iris.html) |
-| Regression     | California Housing Prices             | [Link](https://getdataset.github.io/dataset-hub/datasets/regression/california_housing.html) |
-| Time Series    | Household Electric Power Consumption  | [Link](https://getdataset.github.io/dataset-hub/datasets/timeseries/household_power.html) |
+| Task           | Dataset | Quick Start |
+|----------------|---------|-------------|
+| Classification | [Titanic](https://getdataset.github.io/dataset-hub/datasets/classification/titanic.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GetDataset/dataset-hub/blob/main/notebooks/classification/titanic.ipynb) |
+| Classification | [Iris](https://getdataset.github.io/dataset-hub/datasets/classification/iris.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GetDataset/dataset-hub/blob/main/notebooks/classification/iris.ipynb) |
+| Regression     | [California Housing Prices](https://getdataset.github.io/dataset-hub/datasets/regression/california_housing.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GetDataset/dataset-hub/blob/main/notebooks/regression/california_housing.ipynb) |
+| Time Series    | [Household Electric Power Consumption](https://getdataset.github.io/dataset-hub/datasets/timeseries/household_power.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GetDataset/dataset-hub/blob/main/notebooks/timeseries/household_power.ipynb) |
+
+
+
 
 
 ### 💡 **Have ideas for new datasets or features?**  

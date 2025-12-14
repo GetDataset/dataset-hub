@@ -45,45 +45,6 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
         import dataset_hub
 
         titanic = dataset_hub.classification.get_titanic()
-    
-    Baseline:
-        
-    .. code-block:: python
-
-        from sklearn.model_selection import train_test_split
-        from sklearn.linear_model import LogisticRegression
-        from sklearn.metrics import accuracy_score
-        from dataset_hub.classification import get_titanic
-
-        # Get titanic dataset
-        titanic = get_titanic()
-
-        # Separate target variable (y) and features (X)
-        y = titanic["survived"]
-        X = titanic.drop("survived", axis=1)
-
-        # Drop categorical columns for simplicity (you can preprocess them yourself)
-        X = X.select_dtypes(include=["int64", "float64"])
-
-        # Fill missing numeric values
-        for col in X.columns:
-            X[col] = X[col].fillna(X[col].median())
-
-        # Split data into train and test parts
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42, stratify=y
-        )
-
-        # Create and train the model
-        model = LogisticRegression(max_iter=200)
-        model.fit(X_train, y_train)
-
-        # Make predictions
-        y_pred = model.predict(X_test)
-
-        # Calculate accuracy
-        accuracy = accuracy_score(y_test, y_pred)
-        print("Accuracy:", round(accuracy, 3))  # Example output: 0.706
 
     """
     dataset: DataBundle[pd.DataFrame] = _get_data(

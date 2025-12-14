@@ -58,6 +58,8 @@ select = [
     "I",   # import sorting
     "B",   # bugbear
 ]
+[tool.ruff.lint.per-file-ignores]
+"**/*.ipynb" = ["E501"]
 
 # -----------------------------
 # Type Checking: Mypy

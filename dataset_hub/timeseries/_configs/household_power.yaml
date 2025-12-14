@@ -4,10 +4,10 @@ dataset_parts:
     as_type: pd.DataFrame
     source:
       type: url
-      url: https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip
+      url: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
       format: csv
     read_kwargs:
       sep: ";"
       low_memory: False
       na_values: ['nan','?']
-      # url: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+      # url: https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip

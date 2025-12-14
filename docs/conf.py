@@ -38,6 +38,3 @@ autodoc_default_options = {
     "undoc-members": False,
 }
 autosummary_generate = False
-
-nb_execution_mode = "force" 
-nb_execution_timeout = 120
