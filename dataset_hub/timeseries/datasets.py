@@ -66,7 +66,7 @@ def get_household_power(verbose: Optional[bool] = None) -> pd.DataFrame:
 
         household_power = dataset_hub.timeseries.get_household_power()
 
-    """
+    """  # noqa
 
     dataset: DataBundle[pd.DataFrame] = _get_data(
         dataset_name="household_power", task_type=task_type, verbose=verbose
