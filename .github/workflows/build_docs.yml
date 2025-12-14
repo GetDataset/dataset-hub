@@ -21,6 +21,7 @@ jobs:
       - name: Install base tooling
         run: |
           pip install -U pip
+          pip install --upgrade setuptools
           pip install build
 
       - name: Build wheel

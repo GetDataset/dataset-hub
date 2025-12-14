@@ -82,5 +82,5 @@ plugins = []
 
 
 [tool.setuptools.packages.find]
-include = ["dataset_hub"]
+include = ["dataset_hub*"]
 exclude = ["notebooks*", "docs*", "local_tests*", "jupyter_execute*"]
