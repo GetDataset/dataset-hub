@@ -34,9 +34,6 @@ docs = [
     "myst-parser",
     "sphinxcontrib-bibtex",
     "myst-nb",
-    "scikit-learn",
-    "prophet",
-    "matplotlib",
     "docutils",
     "roman"
 ]

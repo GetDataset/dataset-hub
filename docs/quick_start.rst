@@ -1,3 +1,6 @@
+.. |colab_button| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :alt: Open In Colab
+   :target: https://colab.research.google.com/github/GetDataset/dataset-hub/blob/main/notebooks/classification/titanic.ipynb
 .. _quick_start:
 
 **************
@@ -17,8 +20,7 @@ Load any dataset in a familiar format (e.g., a pandas DataFrame) with a single f
 
     import dataset_hub
 
-    dataset = dataset_hub.classification.get_titanic()
-    # Dataset info & details: https://getdataset.github.io/dataset-hub/datasets/classification/titanic.html
+    dataset = dataset_hub.classification.get_titanic() # pd.DataFrame
     
 After calling the function, a link to the dataset page will appear in the log output.
 It contains detailed information about the dataset (description, columns, target, etc.).
@@ -29,46 +31,7 @@ Next steps
 You can proceed in two ways:
 
     - Start your own experiments with the dataset (split into train and test, build validation, perform feature engineering, build models, etc.)
-    - Use a ready-made baseline provided in the documentation 
-
-For example, here is a simple baseline for :ref:`titanic`:
-
-.. code-block:: python
-
-    from sklearn.model_selection import train_test_split
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.metrics import accuracy_score
-    from dataset_hub.classification import get_titanic
-
-    # Get titanic dataset
-    dataset = get_titanic()
-
-    # Separate target variable (y) and features (X)
-    y = dataset["survived"]
-    X = dataset.drop("survived", axis=1)
-
-    # Drop categorical columns for simplicity (you can preprocess them yourself)
-    X = X.select_dtypes(include=["int64", "float64"])
-
-    # Fill missing numeric values
-    for col in X.columns:
-        X[col] = X[col].fillna(X[col].median())
-
-    # Split data into train and test parts
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
-    )
-
-    # Create and train the model
-    model = LogisticRegression(max_iter=200)
-    model.fit(X_train, y_train)
-
-    # Make predictions
-    y_pred = model.predict(X_test)
-
-    # Calculate accuracy
-    accuracy = accuracy_score(y_test, y_pred)
-    print("Accuracy:", round(accuracy, 3))  # Example output: 0.706
+    - Use a ready-made baseline provided in the documentation. For example, here is a simple baseline for Titanic: |colab_button|
 
 Available datasets
 ------------------
