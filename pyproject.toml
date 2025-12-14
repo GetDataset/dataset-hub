@@ -37,6 +37,8 @@ docs = [
     "scikit-learn",
     "prophet",
     "matplotlib",
+    "docutils",
+    "roman"
 ]
 
 # -----------------------------
