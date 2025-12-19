@@ -1,0 +1,15 @@
+.wy-side-nav-search, .wy-nav-top {
+    background: #1d6aad;
+}
+
+.wy-breadcrumbs {
+    font-size: 14px;
+}
+
+div.nboutput .dataframe,
+div.cell_output .dataframe,
+div.output_area .dataframe {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
