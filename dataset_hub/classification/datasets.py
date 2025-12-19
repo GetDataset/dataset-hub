@@ -42,9 +42,9 @@ def get_titanic(verbose: Optional[bool] = None) -> pd.DataFrame:
 
     .. code-block:: python
     
-        import dataset_hub
+        from dataset_hub.classification import get_titanic
 
-        titanic = dataset_hub.classification.get_titanic()
+        df = get_titanic()
 
     """
     dataset: DataBundle[pd.DataFrame] = _get_data(
@@ -84,9 +84,9 @@ def get_iris(verbose: Optional[bool] = None) -> pd.DataFrame:
 
     .. code-block:: python
 
-        import dataset_hub
+        from dataset_hub.classification import get_iris
 
-        iris = dataset_hub.classification.get_iris()
+        df = get_iris()
 
     """
     dataset: DataBundle[pd.DataFrame] = _get_data(

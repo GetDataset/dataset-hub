@@ -55,9 +55,9 @@ def get_housing(verbose: Optional[bool] = None) -> pd.DataFrame:
 
     .. code-block:: python
 
-        import dataset_hub
+        from dataset_hub.regression import get_housing
 
-        housing = dataset_hub.regression.get_housing()
+        df = get_housing()
 
     """
 

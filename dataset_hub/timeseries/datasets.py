@@ -62,9 +62,9 @@ def get_household_power(verbose: Optional[bool] = None) -> pd.DataFrame:
 
     .. code-block:: python
 
-        import dataset_hub
+        from dataset_hub.timeseries import get_household_power
 
-        household_power = dataset_hub.timeseries.get_household_power()
+        df = get_household_power()
 
     """  # noqa
 
